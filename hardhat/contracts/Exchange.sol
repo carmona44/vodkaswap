@@ -13,4 +13,8 @@ contract Exchange is ERC20 {
         );
         jajTokenAddress = _JajToken;
     }
+
+    function getReserve() public view returns (uint) {
+        return ERC20(jajTokenAddress).balanceOf(address(this));
+    }
 }
