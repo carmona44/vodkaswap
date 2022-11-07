@@ -11,7 +11,6 @@ async function main() {
     await deployedExchangeContract.deployed();
 
     console.log("Exchange Contract Address:", deployedExchangeContract.address);
-    //0x230D7cC2d7E5981E5c7389d678D90b61C54deeCA
 }
 
 main()
