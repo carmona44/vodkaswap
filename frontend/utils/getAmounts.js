@@ -14,7 +14,7 @@ export const getEtherBalance = async (provider, address, contract = false) => {
     }
 };
 
-export const getJAJTokensBalance = async (provider, address) => {
+export const getJajTokensBalance = async (provider, address) => {
     try {
         const tokenContract = new Contract(
             TOKEN_CONTRACT_ADDRESS,
@@ -40,7 +40,7 @@ export const getLPTokensBalance = async (provider, address) => {
     }
 };
 
-export const getReserveOfJAJTokens = async (provider) => {
+export const getReserveOfJajTokens = async (provider) => {
     try {
         const exchangeContract = new Contract(
             EXCHANGE_CONTRACT_ADDRESS,

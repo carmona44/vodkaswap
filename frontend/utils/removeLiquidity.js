@@ -12,8 +12,8 @@ export const getTokensAfterRemove = async (provider, removeLPTokenWei, _ethBalan
         const exchangeContract = new Contract(EXCHANGE_CONTRACT_ADDRESS, EXCHANGE_CONTRACT_ABI, provider);
         const _totalSupply = await exchangeContract.totalSupply();
         const _removeEther = _ethBalance.mul(removeLPTokenWei).div(_totalSupply);
-        const _removeCD = jajTokenReserve.mul(removeLPTokenWei).div(_totalSupply);
-        return { _removeEther, _removeCD };
+        const _removeJaj = jajTokenReserve.mul(removeLPTokenWei).div(_totalSupply);
+        return { _removeEther, _removeJaj };
     } catch (err) {
         console.error(err);
     }

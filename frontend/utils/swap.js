@@ -1,14 +1,14 @@
 import { Contract } from "ethers";
 import { EXCHANGE_CONTRACT_ABI, EXCHANGE_CONTRACT_ADDRESS, TOKEN_CONTRACT_ABI, TOKEN_CONTRACT_ADDRESS } from "../constants";
 
-export const getAmountOfTokensReceivedFromSwap = async (_swapAmountWei, provider, ethSelected, ethBalance, reservedJAJ) => {
+export const getAmountOfTokensReceivedFromSwap = async (_swapAmountWei, provider, ethSelected, ethBalance, reservedJaj) => {
     const exchangeContract = new Contract(EXCHANGE_CONTRACT_ADDRESS, EXCHANGE_CONTRACT_ABI, provider);
     let amountOfTokens;
 
     if (ethSelected) {
-        amountOfTokens = await exchangeContract.getAmountOfTokens(_swapAmountWei, ethBalance, reservedJAJ);
+        amountOfTokens = await exchangeContract.getAmountOfTokens(_swapAmountWei, ethBalance, reservedJaj);
     } else {
-        amountOfTokens = await exchangeContract.getAmountOfTokens(_swapAmountWei, reservedJAJ, ethBalance);
+        amountOfTokens = await exchangeContract.getAmountOfTokens(_swapAmountWei, reservedJaj, ethBalance);
     }
 
     return amountOfTokens;
